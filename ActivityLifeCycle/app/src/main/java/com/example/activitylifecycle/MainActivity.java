@@ -1,10 +1,13 @@
 package com.example.activitylifecycle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         button=findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -38,6 +42,25 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(this, "onCreate() is called ", Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.my_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemid=item.getItemId();
+
+        if(itemid==R.id.action_bar_home){
+            Toast.makeText(this, "You Selected Home", Toast.LENGTH_SHORT).show();
+        }else if(itemid==R.id.action_search){
+            Toast.makeText(this, "You selected Search", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     //Explicit Intent
     public  void goToSecondActivity(){
         Intent intent=new Intent(this, MainActivity2.class);
