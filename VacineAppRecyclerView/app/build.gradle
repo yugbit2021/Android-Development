@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.example.vacineapp_recyclerview'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.vacineapp_recyclerview"
