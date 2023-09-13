@@ -12,5 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "ContactManager"
-include ':app'
+
+rootProject.name = "Contact Manager"
+include(":app")

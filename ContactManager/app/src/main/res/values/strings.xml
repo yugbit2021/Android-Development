@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">ContactManager</string>
+    <string name="app_name">Contact Manager</string>
+    <string name="delete_from_user">DELETE * FROM user</string>
 </resources>
